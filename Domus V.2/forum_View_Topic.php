@@ -49,6 +49,7 @@
             INNER JOIN users u ON u.idUsers = p.idCreatorPosts
             WHERE p.idTopicPosts = $idTopic
             ORDER BY p.datePosts ");
+        // test
 
         $justOneTime = true;
 
