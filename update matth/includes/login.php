@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,19 +7,12 @@
 		<link rel="stylesheet" type="text/css" href="../css/header.css">
 		<script type="text/javascript"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="../script/header.js"></script>
+		<script src="../scripts/header.js"></script>
 		<title>Se Connecter</title>
 	</head>
 
-	<?php  
-	
-	require "header.php";
-
-	?>
-
-
+	<?php require "header.php"; ?>
 	<body>
-
 		<div class="form">
 			<?php
 				if (isset($_SESSION['userId'])) {
@@ -37,12 +28,7 @@
 				</form>
 				<a href="signup.php">Sign up</a>';
 				}
-
-			?>
-			
-					
+			?>		
 		</div>
-		
-
 	</body>
 </html>
