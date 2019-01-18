@@ -20,7 +20,7 @@
 		<div class="container2">
 			<div class="block4">Sécurité</div>
 			<div class="block5">Assistance</div>
-			<div class="block6">Mon Profil</div>
+			<div class="block6"><a href="../php/mon_profil.php">Mon Profil</a></div>
 		</div>
 
 	</body>
