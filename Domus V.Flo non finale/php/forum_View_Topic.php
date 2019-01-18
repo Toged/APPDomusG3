@@ -42,7 +42,7 @@
         include("../includes/connexionBDD.php");
 
         if(isset($_GET['idTopic']))
-            $idTopic = $_SESSION['idTopic'] =  htmlspecialchars($_GET['idTopic']); 
+            $idTopic = $_SESSION['idTopic'] = $_GET['idTopic']; 
 
         $req=$bdd -> query("SELECT p.idCreatorPosts, p.textPosts, p.datePosts, t.titleTopics, u.uidUsers FROM forum_posts p 
             INNER JOIN forum_topics t ON p.idTopicPosts = t.idTopics
