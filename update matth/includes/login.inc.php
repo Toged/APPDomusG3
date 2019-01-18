@@ -31,12 +31,13 @@ if (isset($_POST['login-submit'])) {
 				}
 				else if ($pwdCheck == true) {
 					session_start();
-					$_SESSION['emailUsers'] = $row['emailUsers'];
 					$_SESSION['userId'] = $row['idUsers'];
 					$_SESSION['userUid'] = $row['uidUsers'];
+					$_SESSION['emailUsers'] = $row['emailUsers'];
+					$_SESSION['firstName'] = $row['firstNameUsers'];
+					$_SESSION['lastName'] = $row['lastNameUsers'];
 					//redirection une fois login success
 					header("Location: login.php?login=success");
-					header("Location: ../php/espace_client.php");
 					exit();
 
 				}
@@ -56,3 +57,5 @@ else{
 	header("Location: login.php");
 	exit();
 }
+
+?>

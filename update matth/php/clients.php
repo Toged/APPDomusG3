@@ -36,7 +36,7 @@ if(isset($_GET['recherche'])){
 	$query->bindValue(':client',$clients,PDO::PARAM_STR);
 	$query->execute();
 	while($client=$query->fetch()){
-		echo '<p>Pseudo :</p>'.$client['uidUsers'].'</br>'.'<p>Numéro de téléphone :</p>'.$client['phoneNb'].'</br>'.'<p>Adresse mail :</p>'.$client['emailUsers'] ;
+		echo '<p>Pseudo :</p>'.$client['uidUsers'].'</br>'.'<p>Numéro de téléphone :</p>'.$client['phoneNbUsers'].'</br>'.'<p>Adresse mail :</p>'.$client['emailUsers'] .'</br>'.'<p>Adresse :</p>'.$client['adressUsers'].'</br>'.'<p>Prénom :</p>'.$client['firstNameUsers'].'</br>'.'<p>Nom :</p>'.$client['lastNameUsers'].'</br>'.'<p>Numéro offre :</p>'.$client['offersUsers'];
 	}
 }
 else{
