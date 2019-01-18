@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Header avec Se Connecter-->
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Espace Client</title>
+		<link rel="stylesheet" type="text/css" href="../css/assistance.css">
+		<script type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="../script/accueil_V2.js"></script>
+	</head>
+	<header>
+		<div class="container">
+			<nav class="ordinateur">
+				<a href="#"><img src="../images/logo_domus_blanc.png" alt="logo" class="logo"></a>
+				<ul>
+					<li class="active"><a href="accueil_V2.html">Accueil</a></li>
+					<li><a href="#">Nos Offres</a></li>
+					<li><a href="#">Nos Services</a></li>
+					<li><a href="#">Contact</a></li>
+					
+				</ul>
+			</nav>
+			<nav class="mobile">
+				<div class="bar-btn">
+					<a href="#"><img src="../images/logo_domus_blanc.png" alt="logo" class="logo"></a>
+					<img src="../images/menu32.png" class="menu">
+					<img src="../images/close-cross32.png" class="close">
+				</div>
+				<div class="liste">
+					<p class="active"><a class="active" href="accueil_V2.html">Accueil</a></p>
+					<p><a href="#">Nos Offres</a></p>
+					<p><a href="#">Nos Services</a></p>
+					<p><a href="#">Contact</a></p>
+					<p><a href="#">Se Connecter</a></p>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<body>
+		<div class="assistance">
+			<h2>Quel est votre requête ?</h2>
+			<ul>
+				<li>Avez-vous des questions ?</br> Vous pouvez consulter notre <a href="#">FAQ</a> ou jeter un coup d'oeil sur notre <a href="#">forum</a> !</li>
+				<li>Vous avez besoin de nous contacter par mail ?</br>
+					<form method="post" action="index.php">
+						<label for="email">Votre email </label>: <input type="email" name="email" id="email" required/><br/>
+						<p>Votre message<p>
+						<textarea name="message" id="message" rows="20" cols="70"></textarea></br>
+						<input type="submit" value="Envoyer">
+					</form>
+				</li>
+				<li>Vous pouvez aussi nous appeler au 01 .. .. .. ..</br>
+					<p>Service Client ouvert du lundi au samedi de 8h à 21h</p>
+				</li>
+			</ul>
+		</div>
+	</body>
