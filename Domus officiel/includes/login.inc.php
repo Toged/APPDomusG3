@@ -37,7 +37,12 @@ if (isset($_POST['login-submit'])) {
 					$_SESSION['firstName'] = $row['firstNameUsers'];
 					$_SESSION['lastName'] = $row['lastNameUsers'];
 					//redirection une fois login success
-					header("Location: login.php?login=success");
+					if ($_SESSION['userUid']=='admin') {
+						header("Location: ../php/admin_reception.php");
+					}
+					else{
+						header("Location: ../php/client_area.php");
+					}
 					exit();
 
 				}
