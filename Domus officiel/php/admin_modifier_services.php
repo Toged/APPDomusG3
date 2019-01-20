@@ -5,17 +5,19 @@
 <title>Domotique G3C</title>
 <link rel="stylesheet" type="text/css" href="../css/header.css">
 <link rel="stylesheet" type="text/css" href="../css/footer.css">
+<link rel="stylesheet" type="text/css" href="../css/modifService.css">
 <script type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../scripts/header.js"></script>
 </head>
 
-<?php include("../includes/header.php"); ?>
+<?php include("../includes/header_admin.php"); ?>
 
 <body>
 <!--Environnement-->
 <section  id="environnement">
     <h2>ENVIRONNEMENT</h2>
+    <div class="services">
       <?php
       try
       {
@@ -27,12 +29,14 @@
       }
       $query=$bdd->query("SELECT * FROM service WHERE title1='environnement'");
       while($service=$query->fetch()){
-        echo '<h3>'.$service['title2'].'</h3>'.'<p>'.$service['texte'].'</p>';
+        echo '<div class="service"><h3>'.$service['title2'].'</h3>'.'<p>'.$service['texte'].'</p></div>';
       }
       ?>
+    </div>
 </section>
 <section  id="securite">
     <h2>SECURITE</h2>
+    <div class="services">
       <?php
       try
       {
@@ -44,12 +48,14 @@
       }
       $query=$bdd->query("SELECT * FROM service WHERE title1='securite'");
       while($service=$query->fetch()){
-        echo '<h3>'.$service['title2'].'</h3>'.'<p>'.$service['texte'].'</p>';
+        echo '<div class="service"><h3>'.$service['title2'].'</h3>'.'<p>'.$service['texte'].'</p></div>';
       }
       ?>
+    </div>
 </section>
 <section  id="confort">
     <h2>CONFORT</h2>
+    <div class="services">
       <?php
       try
       {
@@ -61,22 +67,29 @@
       }
       $query=$bdd->query("SELECT * FROM service WHERE title1='confort'");
       while($service=$query->fetch()){
-        echo '<h3>'.$service['title2'].'</h3>'.'<p>'.$service['texte'].'</p>';
+        echo '<div class="service"><h3>'.$service['title2'].'</h3>'.'<p>'.$service['texte'].'</p></div>';
       }
       ?>
+    </div>
 </section>
-<p>Voulez-vous ajouter un service ?</p>
-    <form class="ajout" action="../includes/add_service.php" method="post">
+<div class="modif_service">
+        <div class="ajout_service">
+<h1>Voulez-vous ajouter un service ?</h1>
+    <form class="ajout" action="../includes/ajoutService.php" method="post">
       <input type="text" name="title1Ajout" placeholder="Titre dans lequel insérer"></br>
       <input type="text" name="title2Ajout" placeholder="Titre"></br>
-      <textarea type="text" name="commentaire" id="commentaire" rows="5" cols="70"></textarea></br>
+      <textarea type="text" name="commentaire" id="commentaire" rows="5" cols="30"></textarea></br>
       <input type="submit" value="Appliquer"></br>
     </form>
-    <p>Voulez-vous supprimer un service ?</p>
-    <form class="ajout" action="../includes/delete_service.php" method="post">
+  </div>
+  <div class="supprimer_service">
+    <h1>Voulez-vous supprimer un service ?</h1>
+    <form class="ajout" action="../includes/supprService.php" method="post">
       <input type="text" name="title2Suppr" placeholder="Titre"></br>
       <input type="submit" value="Appliquer"></br>
     </form>
+  </div>
+</div>
 <?php include("../includes/footer.php"); ?>
 </body>
 </html>

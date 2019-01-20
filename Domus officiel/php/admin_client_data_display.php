@@ -26,7 +26,7 @@
 function readName()
 {
 	include("../includes/DBconnexion.php");
-	
+	//testetstes
 	if(isset($_GET['recherche']))
 	{
 		$clients=$_GET['recherche'];
