@@ -1,6 +1,6 @@
 body{
 	font-family: "Roboto", sans-serif;
-	background-color: white;
+	background-color: silver;
 }
 
 .container{
@@ -11,7 +11,7 @@ body{
 	justify-content: space-around;
 }
 
-.block1, .block2, .block3, .block4{
+.block1, .block2, .block3, .block4, .block5, .block6{
 	width: 350px;
 	height: 200px;
 	text-transform: uppercase;
@@ -24,7 +24,7 @@ body{
 	color: white;
 }
 
-.block1:hover, .block2:hover, .block3:hover, .block4:hover{
+.block1:hover, .block2:hover, .block3:hover, .block4:hover, .block5:hover, .block6:hover{
 	-webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -39,9 +39,4 @@ body{
 	height: 100%;
 	display: flex;
 	justify-content: space-around;
-}
-
-.container a, .container2 a{
-	color: white;
-	text-decoration: none;
 }

@@ -30,7 +30,7 @@ p{
 	margin: 10px;
 }
 
-.ajout_offre{
+.ajout_sensor{
 	width:350px;
 	margin: 40px;
 	border: 2px rgb(0, 0, 52) solid;
@@ -42,12 +42,12 @@ p{
 	padding: 10px;
 }
 
-.ajout_offre h1{
+.ajout_sensor h1{
 	margin-top: 10px;
 	margin-left: 0px;
 }
 
-.supprimer_offre{
+.supprimer_sensor{
 	width:220px;
 	height: 220px;
 	margin: 40px;
@@ -61,12 +61,12 @@ p{
 	padding: 10px;
 }
 
-.supprimer_offre h1{
+.supprimer_sensor h1{
 	margin-top: 10px;
 	margin-left: 0px;
 }
 
-.modif_offre{
+.modif_sensor{
 	display: flex;
 	justify-content: center;
 	margin-top: 60px;

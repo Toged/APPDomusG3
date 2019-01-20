@@ -126,10 +126,32 @@ nav.mobile,
 
 
 }
+
+#mySidepane1{
+ 	width:25%;
+  	background-color: black;
+  	margin-left: 8px;
+  	height: 0px;
+  	overflow-y:hidden;
+  	text-align: center;
+  	transition:1.5s;
+  	position: fixed;
+  	color: white;
+}
+
+#mySidepane1 a{
+	color: orange;
+}
+
+#mySidepane1 p{
+	padding-top: 15px;
+}
+
 /**BODY**/
 
 body{
 	font-family: "Roboto", sans-serif;
+	background-color: silver;
 }
 
 .container{
@@ -170,10 +192,6 @@ body{
 	justify-content: space-around;
 }
 
-.container a, .container2 a{
-	color: white;
-	text-decoration: none;
-}
 
 /**FOOTER**/
 .footer_container{

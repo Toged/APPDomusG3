@@ -1,6 +1,3 @@
-<?php
-session_start()
-?>
 <header>
 	<div class="container">
 		<nav class="ordinateur">
@@ -12,6 +9,20 @@ session_start()
 				}else{
 					echo '<a href="../includes/login.php">Se Connecter</a>';
 				}?></li>
+			</ul>
+
+		</nav>
+		<nav class="mobile">
+			<div class="bar-btn">
+				<img src="../images/menu32.png" class="menu">
+				<img src="../images/close-cross32.png" class="close">
+			</div>
+			<ul>
+				<li class="active"><a href="#">Accueil</a></li>
+				<li><a href="#">Nos Offres</a></li>
+				<li><a href="#">Nos Services</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Se Connecter</a></li>
 			</ul>
 		</nav>
 	</div>
