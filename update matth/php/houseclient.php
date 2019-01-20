@@ -10,7 +10,7 @@
 		<script type="text/javascript"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="../scripts/accueil.js"></script>
-		<script src="../script/header.js"></script>
+		<script src="../scripts/header.js"></script>
 
 	</head>
 	<?php include("../includes/header.php"); ?>
@@ -26,8 +26,8 @@
       }
       $query=$bdd->query("SELECT * FROM houses");
       while($house=$query->fetch()){
-        echo '<h3>'.'<a href="../includes/test.php">'.$house['name'].'</a>'.'</h3>'.'<p>'.$house['adressHouses'].'</p>'.'<p>'.$house['areaHouses'].'</p>'.'<p>'.$house['roomTotalNbHouses'].'</p>';
-        echo $_SESSION['idHouse'];
+        echo '<h3>'.'<a href="../includes/test.php">'.$house['nameHouses'].'</a>'.'</h3>'.'<p>'.$house['adressHouses'].'</p>'.'<p>'.$house['areaHouses'].'</p>'.'<p>'.$house['roomTotalNbHouses'].'</p>';
+        //echo $_SESSION['idHouse'];
       }
       ?>
      <p>Voulez-vous ajouter une maison ?</p>
