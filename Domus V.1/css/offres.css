@@ -1,4 +1,18 @@
-/**HEADER**/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+	margin: 0;
+	padding: 0;
+	user-select: none;
+
+}
+
+body{
+	margin-top: 60px;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	background-color: #99ccff;
+}
 
 .container nav.ordinateur,
 .container nav.mobile{
@@ -9,6 +23,8 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 200;
+	color: white;
 }
 
 nav.ordinateur ul{
@@ -40,6 +56,21 @@ nav ul li.active{
 nav ul li a{
 	color: #fff;
 	text-decoration: none;
+	list-style-type: none;
+}
+
+nav .liste p:hover{
+	background: #2461FF;
+}
+
+nav .liste p.active{
+	background: #2461FF;
+}
+
+nav .liste p a{
+	color: #fff;
+	text-decoration: none;
+	list-style-type: none;
 }
 
 nav.mobile, 
@@ -55,7 +86,7 @@ nav.mobile,
 	height: 50px;
 }
 
-@media screen and (max-width: 1100px){ /**Lorsque l'écran est < 700px faire...**/
+@media screen and (max-width: 1000px){ /**Lorsque l'écran est < 700px faire...**/
 	
 	nav.ordinateur{
 		display: none;
@@ -80,46 +111,37 @@ nav.mobile,
 		cursor: pointer;
 	}
 
-	.mobile ul{
+	.mobile .liste{
 		margin-top: :60px;
 		background: rgb(0, 0, 52);
 		display: none;
 
 	}
 
-	.mobile li{
+	.mobile p{
 		text-transform: uppercase;
 		text-align: center;
 		padding: 20px;
 		cursor: pointer;
 	}
 
-	.mobile ul.active{
+	.mobile .liste.active{
 		display: block;
 	}
 
-	.container, .container2{
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
+	.mobile .active .active{
+		margin-left: -200px;
 	}
 
-	.container{
-		margin-bottom: -40px;
+	.contacte{
+		flex-wrap:wrap;
 	}
-
-	.block1, .block2, .block3, .block4, .block5, .block6{
-		margin: 10px;
-	}
-
-
 
 }
-
 #mySidepane1{
  	width:25%;
   	background-color: black;
+  	margin-left: 8px;
   	height: 0px;
   	overflow-y:hidden;
   	text-align: center;
@@ -135,42 +157,7 @@ nav.mobile,
 #mySidepane1 p{
 	padding-top: 15px;
 }
-body{
-	font-family: "Roboto", sans-serif;
-	background-color: silver; 
-	margin-top: 60px;
-}
-h1{
-	font-size: 50px;
-	margin-top: 100px;
-	text-align: center;
-}
-h2{
-	text-align: center;
-}
-input[type="checkbox"] {
-    margin-left: 750px
-	}
-input[type="submit"] {
-	margin-top: 25px;
-	margin-left: 900px;
-	width:100px; 
-	height:50px;
-	background-color:white; 
-	color: blue; 
-	border: transparent; 
-	border-radius: 10px;
-}
-label {
-	font-family: FontAwesome;
-    position: relative;
-    padding-left: 30px;
-    font-size: 30px;
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-    padding: 16px 28px 0 0;
-}
+
 /**FOOTER**/
 .footer_container{
 	display: flex;
@@ -179,9 +166,6 @@ label {
 	height: 180px;
 	margin-top: 250px;
 	justify-content: space-around;
-	bottom: 0;
-	left: 0;
-	position: fixed;
 }
 
 .footer_menu{
@@ -225,4 +209,29 @@ label {
 .footer_copyright{
 	color: white;
 	padding-top: 120px;
+}
+
+.offre_image{
+	display:flex;
+	justify-content:space-around;
+}
+
+.offre_image img{
+	width: 40%;
+	height: 40px;
+	margin-top: 20px;
+}
+
+h3{
+	margin-top: 50px;
+}
+
+
+.offre_image1 img{
+	width: 40%;
+	margin-top: 20px;
+}
+
+.offres{
+	margin: 10%;
 }
