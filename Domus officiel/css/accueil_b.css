@@ -95,6 +95,11 @@ body{
 	padding-left: 20px;
 }
 
+.footer_menu a{
+	color: white;
+	text-decoration: none;
+}
+
 .footer_icons{
 	color: white;
 }
@@ -205,3 +210,4 @@ body{
 .entreprise p{
 	margin-bottom: 150px;
 }
+
