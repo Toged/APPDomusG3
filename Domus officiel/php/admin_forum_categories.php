@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Forum</title>
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/header_admin.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../css/categories_display.css">
     <script type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../scripts/header.js"></script>
 </head>
-<?php include("../includes/header.php"); ?>
+<?php include("../includes/header_admin.php"); ?>
 
 <body>      
     <h1>Les catégories du forum </h1> <br />

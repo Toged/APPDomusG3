@@ -17,7 +17,7 @@
 		<div class="assistance">
 			<h2>Quel est votre requête ?</h2>
 			<ul>
-				<li>Avez-vous des questions ?</br> Vous pouvez consulter notre <a href="#">FAQ</a> ou jeter un coup d'oeil sur notre <a href="#">forum</a> !</li>
+				<li>Avez-vous des questions ?</br> Vous pouvez consulter notre <a href="../php/client_faq.php">FAQ</a> ou jeter un coup d'oeil sur notre <a href="../php/forum_categories.php">forum</a> !</li>
 				<li>Vous avez besoin de nous contacter par mail ?</br>
 					
 					<form method="post" action="../includes/support.inc.php">
