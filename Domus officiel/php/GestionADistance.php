@@ -11,7 +11,7 @@
     <header>
         <div class="container">
             <nav class="ordinateur">
-                <a href="#"><img src="logo_domus_blanc.png" alt="logo" class="logo"></a>
+                <a href="#"><img src="../images/logo_domus_blanc.png" alt="logo" class="logo"></a>
                 <ul>
                     <li class="active"><a href="#">Accueil</a></li>
                     <li><a href="#">Nos Offres</a></li>
@@ -35,7 +35,7 @@
             </nav>
             <nav class="mobile">
                 <div class="bar-btn">
-                    <img src="menu32.png" class="menu">
+                    <img src="../images/menu32.png" class="menu">
                     <img src="close-cross32.png" class="close">
                 </div>
                 <ul>
@@ -114,9 +114,9 @@
                 </ul>   
             </div>
             <div class="footer_icons">
-                <img src="facebook.png" class="fb_icon">
-                <img src="instagram.png" class="insta_icon">
-                <img src="twitter.png" class="twitter_icon">
+                <img src="../images/facebook.png" class="fb_icon">
+                <img src="../images/instagram.png" class="insta_icon">
+                <img src="../images/twitter.png" class="twitter_icon">
             </div>
             <div class="footer_copyright">©Copyright 2018</div>
         </div>
