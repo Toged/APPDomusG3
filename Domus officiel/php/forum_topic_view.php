@@ -67,7 +67,7 @@
                         <div class="userName">'.$data['uidUsers']. ' </div> 
                             <div class="post"> 
                             <div class="postMessage">' .$data['textPosts']. '</div>
-                        <   div class="date">' .$data['datePosts']. '</div>
+                        <div class="date">' .$data['datePosts']. '</div>
                         </div> 
                     </div>';
             }

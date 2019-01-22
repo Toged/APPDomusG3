@@ -27,7 +27,6 @@
                                 <i class="fa fa-pencil"></i>
                                 <a href="GestionEclairage.php"><h5>...les lumières</h5></a>
                                 <div class="separator2"></div>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry.</p>
                             </div>
                         </div> 
 
@@ -36,7 +35,6 @@
                                 <i class="fa fa-camera-retro"></i>
                                 <a href="GestionPositionVolets.php"><h5>...les volets</h5></a>
                                 <div class="separator2"></div>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry.</p>
                             </div>
                         </div> 
 
@@ -45,7 +43,6 @@
                                 <i class="fa fa-lightbulb-o"></i>
                                 <a href="GestionTemperature.php"><h5>...la température</h5></a>
                                 <div class="separator2"></div>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry.</p>
                             </div>
                         </div> 
                     </div>
