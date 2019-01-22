@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contrôle ton habitat à distance!</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/styletempérature.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="header_V.1.js"></script>
+    </head>
+  
+    <body>
+            <!--Home page style-->
+    
+
+        <!-- Sections -->
+       
+        <h1>Vous souhaitez gérer la température...</h1>
+                    
+            
+
+        <form method="post" action="GestionTemperature.php">
+            <select name="choix_piece">
+                <?php ReadRoom(); ?>
+            </select>
+        <br><br>
+        <h2> Vous souhaitez que la température soit...</h2>
+        <br>
+        <select name="choix_temperature">
+            <option value="19°C">19°C</option>
+            <option value="20°C">20°C</option>
+            <option value="21°C">21°C</option>
+            <option value="22°C">22°C</option>
+            <option value="23°C">23°C</option>
+            <option value="24°C">24°C</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Valider" /> 
+        </form>
+        <br><br>
+        <?php DisplayMessage(); ?>      
+
+               
+    </body>
+
+
+
+ <?php 
+function ReadRoom(){
+    $bdd = new PDO('mysql:host=localhost;dbname=domus;charset=utf8', 'root', '');
+    $req=$bdd -> query("SELECT * FROM rooms");
+    while( $data = $req -> fetch() )
+            {
+                echo "<option value=".$data['name'].">".$data['name']."</option>";
+
+            }
+    $req->closeCursor();
+}
+?>
+
+<?php 
+function DisplayMessage(){
+    if (isset($_POST['choix_temperature']) AND isset($_POST['choix_piece'])) {
+        if ($_POST['choix_temperature'] == "19°C" OR $_POST['choix_temperature'] == "20°C" OR $_POST['choix_temperature'] == "21°C") {
+            echo "La température ". $_POST['choix_piece']." est de ".$_POST['choix_temperature']."! "."<i class='fas    fa-thermometer-quarter'></i>";
+        }
+        else if ($_POST['choix_temperature'] == "22°C" OR $_POST['choix_temperature'] == "23°C" OR $_POST['choix_temperature'] == "24°C") {
+            echo "La température ". $_POST['choix_piece']." est de ".$_POST['choix_temperature']."! "."<i class='fas fa-thermometer-three-quarters'></i>";
+        }
+        
+    }
+}
+?>
+
+</html>
