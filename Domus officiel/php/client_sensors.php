@@ -19,20 +19,10 @@
     <div class="house_data">
       <h1> Liste des capteurs </h1><br />
       <div class="MAISON">
-        <?php 
-        if(isset($_GET['idRoom']))
-        {
-          $_SESSION['idRoom'] = $_GET['idRoom']; 
-        }
-        ?>
-		    <?php
-        include("../includes/DBconnexion.php");
-        $id= $_SESSION['idRoom'];
-        $query=$db->query("SELECT * FROM sensor WHERE idRoom=$id ");
-        while($sensor=$query->fetch()){
-          echo '<div class="icon_piece"><img src="../images/sensor.png">'.'</br>'.$sensor['type'].'</div>';
-        }
-        ?>
+      <?php
+        listSensors();
+      ?>
+		    
       </div>
     <div class="modif_sensor">
     <div class="ajout_sensor">
@@ -55,3 +45,20 @@
     <?php include("../includes/footer.php"); ?> </div>
 	</body>
 </html>
+
+<?php
+  function listSensors()
+  {
+    if(isset($_GET['idRoom']))
+    {
+        include("../includes/DBconnexion.php");
+
+        $id= $_SESSION['idRoom'] = $_GET['idRoom'];
+        $query=$db->query("SELECT * FROM sensor WHERE idRoom=$id ");
+        while($sensor=$query->fetch())
+        {
+          echo '<div class="icon_piece"><img src="../images/sensor.png">'.'</br>'.$sensor['type'].'</div>';
+        } 
+    }    
+  }       
+?>

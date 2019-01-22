@@ -13,5 +13,5 @@ $req->execute(array(
 	'type' => $type,
 	'donnee' => $donnee,
 ));
-header('Location: ../php/client_sensors.php');
+header('Location: ../php/client_sensors.php?idRoom='.$idRoom);
 ?>

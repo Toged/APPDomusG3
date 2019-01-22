@@ -14,8 +14,6 @@
     <?php include("../includes/header.php"); ?>
     <body>
         <h1>Vous souhaitez gérer la température...</h1>
-                    
-            
 
         <form method="post" action="GestionTemperature.php">
             <select name="choix_piece">
@@ -41,8 +39,6 @@
                
     </body>
     <?php include("../includes/footer.php"); ?>
-
-
 
  <?php 
 function ReadRoom(){
