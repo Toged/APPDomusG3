@@ -4,17 +4,15 @@
         <meta charset="UTF-8">
         <title>Contrôle ton habitat à distance!</title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/stylepositionvoletss.css">
+        <link rel="stylesheet" href="../css/stylepositionvolets.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <link rel="stylesheet" type="text/css" href="../css/footer.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="header_V.1.js"></script>
     </head>
-  
+    <?php include("../includes/header.php"); ?>
     <body>
-            <!--Home page style-->
-    
-
-        <!-- Sections -->
        
         <h1>Vous souhaitez gérer la position des volets...</h1>
                     
@@ -36,9 +34,9 @@
         </form>
         <br><br>
         <?php DisplayMessage(); ?>      
-
-               
+      
     </body>
+    <?php include("../includes/footer.php"); ?>
 
 
 
