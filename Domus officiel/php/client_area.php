@@ -15,12 +15,10 @@
 		<div class="container">
 			<div class="block1"><a href="../php/client_houses.php">Maison</a></div>
 			<div class="block2"><a href="../php/alertes.php">Alertes</a></div>
-			<div class="block3">Gestion d'énergie</div>
 		</div>
 		<div class="container2">
-			<div class="block4">Sécurité</div>
-			<div class="block5">Assistance</div>
-			<div class="block6">Mon Profil</div>
+			<div class="block3"><a href="../php/support.php">Assistance</a></div>
+			<div class="block4"><a href="../php/client_profil_view.php">Mon Profil</a></div>
 		</div>
 
 	</body>
