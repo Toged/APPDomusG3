@@ -44,33 +44,37 @@
         include("../includes/DBconnexion.php");
 
         if(isset($_GET['idTopic']))
+        {
             $idTopic = $_SESSION['idTopic'] = $_GET['idTopic']; 
 
-        $req=$db -> query("SELECT p.idCreatorPosts, p.textPosts, p.datePosts, t.titleTopics, u.uidUsers FROM forum_posts p 
+            $req=$db -> query("SELECT p.idCreatorPosts, p.textPosts, p.datePosts, t.titleTopics, u.uidUsers FROM forum_posts p 
             INNER JOIN forum_topics t ON p.idTopicPosts = t.idTopics
             INNER JOIN users u ON u.idUsers = p.idCreatorPosts
             WHERE p.idTopicPosts = $idTopic
             ORDER BY p.datePosts ");
 
-        $justOneTime = true;
+            $justOneTime = true;
 
-        while($data = $req -> fetch())
-        {
-            if($justOneTime == true)
+            while($data = $req -> fetch())
             {
-                echo '<h1> Nom du topic : ' .$data['titleTopics']. '</h1> <br />';
-                $justOneTime = false;
-            }
+                if($justOneTime == true)
+                {
+                    echo '<h1> Nom du topic : ' .$data['titleTopics']. '</h1> <br />';
+                    $justOneTime = false;
+                }
                    
-            echo '<div class="topicView"> 
-            		<div class="userName">'.$data['uidUsers']. ' </div> 
-            		<div class="post"> 
-            			<div class="postMessage">' .$data['textPosts']. '</div>
-            			<div class="date">' .$data['datePosts']. '</div>
-            		</div> 
-            	</div>';
+                echo '<div class="topicView"> 
+                        <div class="userName">'.$data['uidUsers']. ' </div> 
+                            <div class="post"> 
+                            <div class="postMessage">' .$data['textPosts']. '</div>
+                        <   div class="date">' .$data['datePosts']. '</div>
+                        </div> 
+                    </div>';
+            }
+            $req->closeCursor();
         }
-        $req->closeCursor(); 
+
+         
     }
 ?>
     

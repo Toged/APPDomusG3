@@ -49,23 +49,27 @@
         include("../includes/DBconnexion.php");
 
         if(isset($_GET['idCat']))
-            $idCat = $_SESSION['idCat'] = $_GET['idCat']; 
-
-        $req=$db -> query("SELECT t.idTopics, t.titleTopics, t.idCreatorTopics, t.lastDateTopics, u.uidUsers FROM forum_topics t
-        	LEFT JOIN users u ON u.idUsers = t.idCreatorTopics
-        	WHERE t.idCategoryTopics = $idCat
-        	ORDER by t.lastDateTopics DESC");
-
-        while($data = $req -> fetch())
         {
-        	$idTopic = $data['idTopics'];
-			echo '<tr>
-					<td><a href="admin_forum_topic_view.php?idTopic='.$idTopic.'"\'>'.$data['titleTopics']. '</a> </td>
-					<td>' .$data['uidUsers']. ' </td>
-					<td>' .$data['lastDateTopics']. '</td>
-				</tr>';
+            $idCat = $_SESSION['idCat'] = $_GET['idCat'];
+
+            $req=$db -> query("SELECT t.idTopics, t.titleTopics, t.idCreatorTopics, t.lastDateTopics, u.uidUsers FROM forum_topics t
+            LEFT JOIN users u ON u.idUsers = t.idCreatorTopics
+            WHERE t.idCategoryTopics = $idCat
+            ORDER by t.lastDateTopics DESC");
+
+            while($data = $req -> fetch())
+            {
+                $idTopic = $data['idTopics'];
+                echo '<tr>
+                        <td><a href="admin_forum_topic_view.php?idTopic='.$idTopic.'"\'>'.$data['titleTopics']. '</a> </td>
+                        <td>' .$data['uidUsers']. ' </td>
+                        <td>' .$data['lastDateTopics']. '</td>
+                    </tr>';
+            }
+            $req->closeCursor();  
         }
-        $req->closeCursor(); 
+
+        
     }
 
     function createATopic()
