@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 21 jan. 2019 à 18:30
+-- Généré le :  mar. 22 jan. 2019 à 21:09
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -101,16 +101,16 @@ CREATE TABLE IF NOT EXISTS `forum_categories` (
   `orderCategories` int(11) NOT NULL,
   PRIMARY KEY (`idCategories`),
   UNIQUE KEY `cat_ordre` (`orderCategories`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
 
 --
 -- Déchargement des données de la table `forum_categories`
 --
 
 INSERT INTO `forum_categories` (`idCategories`, `nameCategories`, `descCategories`, `orderCategories`) VALUES
-(3, 'Autre', '', 15),
-(2, 'Assistance', '', 10),
-(1, 'Général', '', 5);
+(2, 'Assistance', 'Besoin d\'aide posez vos questions ici', 10),
+(1, 'Général', 'Sujet global sur Domus', 5),
+(8, 'Autre', 'Posez vos questions sur d\'autres sujets ici.', 15);
 
 -- --------------------------------------------------------
 
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `forum_posts` (
   `textPosts` text CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `datePosts` datetime NOT NULL,
   PRIMARY KEY (`idPosts`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `forum_posts`
@@ -137,12 +137,14 @@ INSERT INTO `forum_posts` (`idPosts`, `idTopicPosts`, `idCreatorPosts`, `textPos
 (5, 1, 1, 'yo', '2019-01-18 08:03:04'),
 (6, 1, 1, 'dadadadada', '2019-01-18 08:03:53'),
 (7, 1, 1, 'ce forum est tellement BO', '2019-01-18 08:04:30'),
-(8, 1, 6, 'j\'approuve', '2019-01-18 08:08:37'),
-(9, 2, 6, 'Cc', '2019-01-18 08:19:50'),
-(14, 2, 6, 'salut', '2019-01-18 13:22:38'),
-(16, 1, 6, 'e', '2019-01-20 04:07:58'),
-(15, 1, 6, 'dur', '2019-01-20 04:03:49'),
-(17, 1, 6, 'c\'est compliqué', '2019-01-20 04:08:10');
+(22, 1, 1, 'pourquoi', '2019-01-22 16:45:10'),
+(21, 1, 1, 'z', '2019-01-22 11:34:25'),
+(20, 1, 1, 'test', '2019-01-22 11:34:06'),
+(19, 1, 1, 'autre', '2019-01-22 11:33:48'),
+(18, 1, 1, 'test d\'heure de modif', '2019-01-22 11:31:45'),
+(27, 41, 1, 'yyyy', '2019-01-22 20:33:09'),
+(28, 4, 1, 'ah', '2019-01-22 20:33:37'),
+(29, 42, 1, 'Oui j\'aimerais savoir bidule\r\n', '2019-01-22 20:34:47');
 
 -- --------------------------------------------------------
 
@@ -156,18 +158,18 @@ CREATE TABLE IF NOT EXISTS `forum_topics` (
   `idCategoryTopics` int(11) NOT NULL,
   `titleTopics` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `idCreatorTopics` int(11) NOT NULL,
-  `vuTopics` mediumint(8) NOT NULL,
-  `timeTopics` int(11) NOT NULL,
+  `lastDateTopics` datetime NOT NULL,
   PRIMARY KEY (`idTopics`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `forum_topics`
 --
 
-INSERT INTO `forum_topics` (`idTopics`, `idCategoryTopics`, `titleTopics`, `idCreatorTopics`, `vuTopics`, `timeTopics`) VALUES
-(1, 1, 'test', 1, 10, 11),
-(2, 2, 'Yo', 6, 10, 11);
+INSERT INTO `forum_topics` (`idTopics`, `idCategoryTopics`, `titleTopics`, `idCreatorTopics`, `lastDateTopics`) VALUES
+(1, 1, 'Test de topics', 1, '2019-01-22 20:23:57'),
+(43, 1, 'test', 1, '2019-01-22 20:48:51'),
+(42, 1, 'Salut', 1, '2019-01-22 20:34:47');
 
 -- --------------------------------------------------------
 
@@ -330,9 +332,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`idUsers`, `uidUsers`, `emailUsers`, `pwdUsers`, `phoneNbUsers`, `adressUsers`, `firstNameUsers`, `lastNameUsers`, `offersUsers`) VALUES
-(1, 'admin', 'florent.favole@wanadoo.fr', '$2y$10$c0s0j4r7dL9q2DBzzeuPJevL/O1L1jZqgWYriX4yMnh4f.71S1p0C', '', '', '', '', 0),
-(2, 'utilisateur', 'azerty@mail.com', '$2y$10$Zw5Wunw19WwCToW7tVj4zu4ayfUCfHOf4NU1wzVCjGblBiYU16qW.', '', '', '', '', 0),
-(6, 'JJ OwO', 'jj.owo@msn.fr', '0', '3368482071', '57 avenue Henri Matisse', 'jean', 'bb', 0);
+(1, 'admin', 'florent.favole@wanadoo.fr', '$2y$10$c0s0j4r7dL9q2DBzzeuPJevL/O1L1jZqgWYriX4yMnh4f.71S1p0C', '', '', 'jean jacque', 'bb', 0),
+(2, 'utilisateur', 'azerty@mail.com', '$2y$10$Zw5Wunw19WwCToW7tVj4zu4ayfUCfHOf4NU1wzVCjGblBiYU16qW.', '', '', '', '', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
