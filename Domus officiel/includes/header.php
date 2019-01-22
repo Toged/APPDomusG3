@@ -7,12 +7,12 @@
 			<ul>
 				<li class="active"><a href="../php/client_reception.php">Accueil</a></li>
 				<li><a href="../php/offers.php">Nos Offres</a></li>
+				<li><a href="../php/services.php">Nos Services</a></li>
 				<li><?php if(isset($_SESSION['userId'])){
 					echo '<a href="../php/client_area.php">Espace Client</a>';
 				}else{
-					echo '<a href="../php/services.php">Nos Services</a>';
+					echo '<a href="../php/support.php">Contact</a>';
 				}?></li>
-				<li><a href="../php/support.php">Contact</a></li>
 				<li ><?php if(isset($_SESSION['userId'])){
 					echo '<a href="../includes/logout.inc.php">Se Déconnecter</a>';
 				}else{
