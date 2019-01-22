@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Contrôle ton habitat à distance!</title>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/style_a_distance.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="header_V.1.js"></script>
