@@ -16,6 +16,23 @@
     <h1>Les catégories du forum </h1> <br />
     <div class="categorie"> 
         <?php displayCategories(); ?>   
+    </div>
+    <div class="modifier">
+        <div class="addCategorie">
+            <form action="../includes/add_category.php" method="post">
+                <label for="name">Entrez le nom de catégorie à ajouter  </label> : <input type="text" name="name" id="name" /><br />
+                <label for="name">Entrez une description </label> : <input type="text" name="desc" id="desc" /><br />
+                <label for="areaHouse">Numéro d'ordre </label> : <input type="number" name="order" id="order" /><br />
+                <input type="submit" value="Valider" />            
+            </form>
+
+        </div>
+        <div class="deleteCategorie">
+            <form action="../includes/delete_category.php" method="post">
+                <label for="name">Entrez le nom de la catégorie à supprimer </label> : <input type="text" name="name" id="name" /><br />
+                <input type="submit" value="Valider" />
+            </form>
+        </div>
     </div> 
 </body>
 <?php include("../includes/footer.php"); ?>
@@ -31,7 +48,8 @@
         while($data = $req -> fetch() )
         {
             $idCat = $data['idCategories'];
-            echo '<a href="forum_topics.php?idCat='.$idCat.'"\'>'.$data['nameCategories'].' </a><br />';
+            echo '<a href="admin_forum_topics.php?idCat='.$idCat.'"\'>'.$data['nameCategories'].' </a> <br /> 
+            Numéro d\'ordre : '.$data['orderCategories'].' <br />';
             echo $data['descCategories']. '<br /><br />';
         }
         $req->closeCursor(); 

@@ -10,7 +10,7 @@ if(isset($_SESSION['userId']) && isset($_SESSION['idTopic']))
 	$userId = $_SESSION['userId'];
 	$topicId = $_SESSION['idTopic'];
 	$message = htmlspecialchars($_POST['message']); 
-	$datetime = date("Y-m-d H:i:s");
+	$dateTime = date("Y-m-d H:i:s");
 
 	if((preg_match("#(*UTF8)[[:alnum:]]#", $message)))
 	{
@@ -20,7 +20,14 @@ if(isset($_SESSION['userId']) && isset($_SESSION['idTopic']))
 			'userId' => $userId,
 			'topicId' => $topicId,
 			'message' => $message,
-			'datePost' => $datetime
+			'datePost' => $dateTime
+		));
+
+		$req = $db->prepare('UPDATE forum_topics SET lastDateTopics=:datePost WHERE idTopics=:topicId');
+
+		$req->execute(array(
+			'topicId' => $topicId,
+			'datePost' => $dateTime
 		));
 	}	
 }

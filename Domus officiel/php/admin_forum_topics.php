@@ -29,7 +29,16 @@
 	</div>
 	<div class="createTopic">
 		<?php createATopic() ?>
-	</div> 
+	</div><br />
+    <div class="deleteTopic">
+        <form action="../includes/delete_topic.php" method="post">
+            <label for="title"> Entrez le titre du topic à supprimer : </label><br />    
+            <textarea name="title" id="title" rows="1" cols="50"></textarea><br />
+            <label for="date"> Entrez l'heure du dernier message : </label><br />    
+            <textarea name="date" id="date" rows="1" cols="50"></textarea><br />
+            <input type="submit" value="Valider" />
+        </form>
+    </div> 
 </body>
 <?php include("../includes/footer.php"); ?>
 </html>
@@ -51,7 +60,7 @@
         {
         	$idTopic = $data['idTopics'];
 			echo '<tr>
-					<td><a href="forum_topic_view.php?idTopic='.$idTopic.'"\'>'.$data['titleTopics']. '</a> </td>
+					<td><a href="admin_forum_topic_view.php?idTopic='.$idTopic.'"\'>'.$data['titleTopics']. '</a> </td>
 					<td>' .$data['uidUsers']. ' </td>
 					<td>' .$data['lastDateTopics']. '</td>
 				</tr>';

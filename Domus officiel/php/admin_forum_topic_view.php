@@ -20,7 +20,14 @@
     	writePost();
     	echo '</div>';
         
-    ?>    
+    ?><br />
+    <div class="deletePost">
+        <form action="../includes/delete_post.php" method="post">
+            <label for="date"> Entrez l'heure du message à supprimer : </label><br />    
+            <textarea name="date" id="date" rows="1" cols="50"></textarea><br />
+            <input type="submit" value="Valider" />
+        </form>
+    </div>    
 </body>
 <?php include("../includes/footer.php"); ?>
 </html>
