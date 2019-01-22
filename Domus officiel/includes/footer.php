@@ -7,7 +7,6 @@
 				<li>Nos Offres</li>
 				<li>Contact</li>
 				<li>Espace Client</li>
-				<li><a href="../includes/client_faq.php">F.A.Q.</a></li>
 			</ul>	
 		</div>
 		<div class="footer_icons">
