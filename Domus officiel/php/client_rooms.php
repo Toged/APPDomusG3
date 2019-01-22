@@ -5,22 +5,27 @@
     <title>Definition maison</title>
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/room_data.css">
+    <link rel="stylesheet" type="text/css" href="../css/rooms.css">
     <script type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../scripts/header.js"></script>
 </head>
-<?php include("../includes/header.php");
-if(isset($_GET['idHouse']))
-        {
-          $_SESSION['idHouse']=$_GET['idHouse'];
-        } ?>
+<?php include("../includes/header.php"); ?>
 <body>
     <div class="house_data">
         <h1> Liste des pièces </h1><br />
         <div class="MAISON">
         <?php displayRoom(); ?>
-        </div>
+    </div>
+    <div class="actionneur">
+      <?php
+      if(isset($_GET['idHouse']))
+      {
+          $id= $_SESSION['idHouse'] = $_GET['idHouse'];
+          echo '<a href="GestionADistance.php?idHouse='.$id.'"\'> Accèdez aux actionneurs de cette pièce</a>';
+      }
+      ?>
+    </div>
         <div class="modif_piece">
         <div class="ajout_piece"> 
         <h1>Ajoutez une pièce </h1><br />
@@ -58,14 +63,18 @@ if(isset($_GET['idHouse']))
     function displayRoom() 
     { 
         include("../includes/DBconnexion.php");
-        $id= $_SESSION['idHouse']; 
-        $req=$db -> query("SELECT * FROM rooms WHERE idHouse = $id");
-
-        while($data=$req->fetch())
+        if(isset($_GET['idHouse']))
         {
-            $idRoom = $data['idRoom'];
-            echo '<a href="client_sensors.php?idRoom='.$idRoom.'"\'>'.'<div class="icon_piece"><img src="../images/bedroom.png">'.'</br>'.$data['name'].'</div>'.' </a>';
+           $id = $_SESSION['idHouse']=$_GET['idHouse'];
+
+           $req=$db -> query("SELECT * FROM rooms WHERE idHouse = $id");
+
+            while($data=$req->fetch())
+            {
+                $idRoom = $data['idRoom'];
+                echo '<a href="client_sensors.php?idRoom='.$idRoom.'"\'>'.'<div class="icon_piece"><img src="../images/bedroom.png">'.'</br>'.$data['name'].'</div>'.' </a>';
+            }   
+            $req->closeCursor(); 
         }   
-        $req->closeCursor(); 
     }
 ?>

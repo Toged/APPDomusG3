@@ -10,7 +10,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="header_V.1.js"></script>
     </head>
-    <?php include("../includes/header.php"); ?>
+    <?php include("../includes/header.php"); 
+    
+    ?>
     <body>
         <section id="service" class="service sections">
             <div class="container">

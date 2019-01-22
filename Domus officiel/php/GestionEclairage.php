@@ -43,14 +43,18 @@
 
  <?php 
 function ReadRoom(){
-	$bdd = new PDO('mysql:host=localhost;dbname=domus;charset=utf8', 'root', '');
-	$req=$bdd -> query("SELECT * FROM rooms");
-	while( $data = $req -> fetch() )
-			{
-				echo "<option value=".$data['name'].">".$data['name']."</option>";
-
-			}
-	$req->closeCursor();
+	
+	if(isset($_SESSION['idHouse']))
+    {
+    	include("../includes/DBconnexion.php");
+        $id= $_SESSION['idHouse'];
+		$req=$db -> query("SELECT name FROM rooms WHERE idHouse = $id");
+		while( $data = $req -> fetch() )
+		{
+			echo "<option value=".$data['name'].">".$data['name']."</option>";
+		}
+		$req->closeCursor();
+	}
 }
 ?>
 

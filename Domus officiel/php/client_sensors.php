@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/accueil.css">
 		<link rel="stylesheet" href="../css/header.css">
 		<link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/sensorclient.css">
+    <link rel="stylesheet" href="../css/sensor_client.css">
 		<script type="text/javascript"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="../scripts/accueil.js"></script>
@@ -19,10 +19,7 @@
     <div class="house_data">
       <h1> Liste des capteurs </h1><br />
       <div class="MAISON">
-      <?php
-        listSensors();
-      ?>
-		    
+      <?php listSensors(); ?>
       </div>
     <div class="modif_sensor">
     <div class="ajout_sensor">
@@ -49,16 +46,15 @@
 <?php
   function listSensors()
   {
+    include("../includes/DBconnexion.php");
     if(isset($_GET['idRoom']))
     {
-        include("../includes/DBconnexion.php");
-
-        $id= $_SESSION['idRoom'] = $_GET['idRoom'];
-        $query=$db->query("SELECT * FROM sensor WHERE idRoom=$id ");
-        while($sensor=$query->fetch())
-        {
-          echo '<div class="icon_piece"><img src="../images/sensor.png">'.'</br>'.$sensor['type'].'</div>';
-        } 
-    }    
+      $id= $_SESSION['idRoom'] = $_GET['idRoom'];
+      $query=$db->query("SELECT * FROM sensor WHERE idRoom=$id ");
+      while($sensor=$query->fetch())
+      {
+        echo '<div class="icon_piece"><img src="../images/sensor.png">'.'</br>'.$sensor['type'].'</div>';
+      } 
+    }
   }       
 ?>
