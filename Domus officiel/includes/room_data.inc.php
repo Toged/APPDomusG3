@@ -23,5 +23,5 @@ if(isset($_SESSION['userId']))
 		));
 }
 
-header('Location: ../php/client_rooms.php');
+header('Location: ../php/client_rooms.php?idHouse='. $idHouse);
 ?>

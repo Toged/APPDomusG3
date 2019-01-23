@@ -11,5 +11,5 @@ $query = $db->prepare($sql);
 $query->bindValue(':nameRoom',$nameRoom,PDO::PARAM_STR);
 $query->execute();
 }
-header('Location: ../php/client_rooms.php');
+header('Location: ../php/client_rooms.php?idHouse='. $id);
 ?>
