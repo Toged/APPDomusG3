@@ -3,9 +3,9 @@
 <header>
 	<div class="container">
 		<nav class="ordinateur">
-			<a href="../php/client_reception.php"><img src="../images/logo_domus_blanc.png" alt="logo" class="logo"></a>
+			<a href="../php/index.php"><img src="../images/logo_domus_blanc.png" alt="logo" class="logo"></a>
 			<ul>
-				<li class="active"><a href="../php/client_reception.php">Accueil</a></li>
+				<li class="active"><a href="../php/index.php">Accueil</a></li>
 				<li><a href="../php/offers.php">Nos Offres</a></li>
 				<li><a href="../php/services.php">Nos Services</a></li>
 				<li><?php if(isset($_SESSION['userId'])){
@@ -26,7 +26,7 @@
 				<img src="../images/close-cross32.png" class="close">
 			</div>
 			<ul>
-				<li class="active"><a href="../php/client_reception.php">Accueil</a></li>
+				<li class="active"><a href="../php/index.php">Accueil</a></li>
 				<li><a href="../php/offers.php">Nos Offres</a></li>
 				<li><a href="../php/services.php">Nos Services</a></li>
 				<li><?php if(isset($_SESSION['userId'])){

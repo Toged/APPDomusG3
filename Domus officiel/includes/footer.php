@@ -3,7 +3,7 @@
 		<div class="footer_menu">
 			<ul>
 				<li>MENU</li>
-				<li><a href="../php/client_reception.php">Accueil</a></li>
+				<li><a href="../php/index.php">Accueil</a></li>
 				<li><a href="../php/offers.php">Nos Offres</a></li>
 				<li><a href="../php/services.php">Nos Services</a></li>
 				<li><a href="../php/support.php">Contact</a></li>

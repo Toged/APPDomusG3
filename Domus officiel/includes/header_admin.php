@@ -4,7 +4,7 @@ session_start()
 <header>
 	<div class="container">
 		<nav class="ordinateur">
-			<a href="../php/client_reception.php"><img src="../images/logo_domus_blanc.png" alt="logo" class="logo"></a>
+			<a href="../php/index.php"><img src="../images/logo_domus_blanc.png" alt="logo" class="logo"></a>
 			<ul>
 				<li class="active"><a href="../php/admin_reception.php">Accueil-Administrateur</a></li>
 				<li ><?php if(isset($_SESSION['userId'])){
