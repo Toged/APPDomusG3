@@ -16,6 +16,7 @@
 		<div class="container">
 			<div class="block1"><a href="../php/admin_support_data_check.php">Message du support client</a></div>
 			<div class="block2"><a href="../php/admin_forum_categories.php">Forum</a></div>
+			<div class="block5"><a href="../php/admin_faq.php">FAQ</a></div>
 		</div>
 		<div class="container2">
 			<div class="block3"><a href="../php/admin_modifier.php">Modifier Page</a></div>
