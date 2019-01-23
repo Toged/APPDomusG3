@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/categories_display.css">
     <script type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../scripts/header.js"></script>
+    <script src="../scripts/header_admin.js"></script>
 </head>
 <?php include("../includes/header_admin.php"); ?>
 
@@ -25,7 +25,6 @@
                 <label for="areaHouse">Numéro d'ordre </label> : <input type="number" name="order" id="order" /><br />
                 <input type="submit" value="Valider" />            
             </form>
-
         </div>
         <div class="deleteCategorie">
             <form action="../includes/delete_category.php" method="post">
@@ -45,12 +44,11 @@
        
         $req=$db -> query("SELECT idCategories, nameCategories, descCategories, orderCategories FROM forum_categories ORDER by orderCategories");
 
-        while($data = $req -> fetch() )
+        while($data = $req -> fetch())
         {
             $idCat = $data['idCategories'];
             echo '<a href="admin_forum_topics.php?idCat='.$idCat.'"\'>'.$data['nameCategories'].' </a> <br /> 
-            Numéro d\'ordre : '.$data['orderCategories'].' <br />';
-            echo $data['descCategories']. '<br /><br />';
+            Numéro d\'ordre : '.$data['orderCategories'].' <br />' .$data['descCategories']. '<br /><br />';
         }
         $req->closeCursor(); 
     }

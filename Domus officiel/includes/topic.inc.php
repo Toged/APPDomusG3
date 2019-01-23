@@ -9,9 +9,11 @@ if(isset($_SESSION['userId']) && isset($_SESSION['idCat']))
 {
 	$userId = $_SESSION['userId'];
 	$catId = $_SESSION['idCat'];
-	$title = htmlspecialchars($_POST['title']); 
-	$message = htmlspecialchars($_POST['message']); 
-	$dateCreate = date("Y-m-d H:i:s");
+	$title = htmlspecialchars($_POST['title']);
+
+	if((preg_match("#(*UTF8)[[:alnum:]]#", $title)))
+	{
+		$dateCreate = date("Y-m-d H:i:s");
 
 		$req = $db->prepare('INSERT INTO forum_topics (idCategoryTopics, titleTopics, idCreatorTopics, lastDateTopics) VALUES(:catId, :title, :userId, :datePost)');
 
@@ -21,23 +23,25 @@ if(isset($_SESSION['userId']) && isset($_SESSION['idCat']))
 			'userId' => $userId,
 			'datePost' => $dateCreate
 		));
-
-		/*$req = $db->query('SELECT idTopics FROM forum_topics WHERE titleTopics = "oui"');
-
-		while($data = $req -> fetch());
-        {
-        	$topicId = $data['idTopics'];
-        }
-
-		$req = $db->prepare('INSERT INTO forum_posts (idTopicPosts, idCreatorPosts, textPosts, datePosts) VALUES(:topicId, :userId, :message, :datePost)');
-
-		$req->execute(array(
-			'topicId' => $topicId,
-			'userId' => $userId,
-			'message' => $message,
-			'datePost' => $dateCreate
-		));*/
-		
+		if($userId = 1)
+			header('Location: ../php/admin_forum_topics.php?idCat='.$catId);
+		else
+			header('Location: ../php/forum_topics.php?idCat='.$catId);
+	}
+	else
+	{
+		if($userId = 1)
+			header('Location: ../php/admin_forum_topics.php?idCat='.$catId.'&error="invalidtitle"');
+		else
+			header('Location: ../php/forum_topics.php?idCat='.$catId.'&error="invalidtitle"');
+	}			
 }
-header('Location: ../php/forum_topics.php?idCat='.$catId.'&idTopic='.$topicId);
+else
+	{
+		if($userId = 1)
+			header('Location: ../php/admin_forum_topics.php?idCat='.$catId.'&error="invalidloginortopic"');
+		else
+			header('Location: ../php/forum_topics.php?idCat='.$catId.'&error="invalidloginortopic"');
+	}
+
 ?>

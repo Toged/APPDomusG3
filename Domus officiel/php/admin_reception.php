@@ -9,7 +9,7 @@
 		<script type="text/javascript"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="../scripts/accueil.js"></script>
-		<script src="../scripts/header.js"></script>
+		<script src="../scripts/header_admin.js"></script>
 	</head>
 	<?php include("../includes/header_admin.php"); ?>
 	<body>
